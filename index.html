@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Zero ao Mundo 360 - Viaje com a gente!</title>
+    <meta name="description" content="Do Zero ao Mundo 360: Inspirando pessoas a largar tudo e viajar o mundo. Dicas, roteiros, recomendações e nossa história de transformação.">
+    <style>
+        /* Variáveis de cores e tipografia */
+        :root {
+            --azul-oceano: #1a6ba1;
+            --azul-claro: #4a90e2;
+            --areia: #f5e8c8;
+            --dourado: #d4af37;
+            --branco: #ffffff;
+            --preto: #333333;
+            --cinza-claro: #f8f8f8;
+            --cinza: #e0e0e0;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-texto: 'Open Sans', sans-serif;
+        }
+        
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--fonte-texto);
+            color: var(--preto);
+            line-height: 1.6;
+            background-color: var(--branco);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--preto);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--azul-oceano);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--dourado);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--azul-oceano);
+            color: var(--branco);
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dourado);
+            color: var(--preto);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-dourado {
+            background-color: var(--dourado);
+            color: var(--preto);
+        }
+        
+        .btn-dourado:hover {
+            background-color: var(--azul-oceano);
+            color: var(--branco);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--dourado);
+            margin: 15px auto;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--azul-oceano);
+        }
+        
+        .logo span {
+            color: var(--dourado);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--preto);
+        }
+        
+        nav ul li a:hover {
+            color: var(--azul-oceano);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/random/1920x1080/?travel,couple') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--branco);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Sobre Nós */
+        .sobre {
+            background-color: var(--cinza-claro);
+        }
+        
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .sobre-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sobre-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .sobre-content {
+            flex: 1;
+        }
+        
+        .sobre-content h2 {
+            font-size: 2.5rem;
+        }
+        
+        .sobre-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Destinos */
+        .destinos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .destino-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .destino-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .destino-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .destino-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .destino-card:hover .destino-img img {
+            transform: scale(1.1);
+        }
+        
+        .destino-content {
+            padding: 20px;
+        }
+        
+        .destino-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Blog */
+        .blog {
+            background-color: var(--cinza-claro);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Recomendações */
+        .recomendacoes-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            color: var(--azul-oceano);
+            border-bottom: 2px solid var(--dourado);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .produto-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .produto-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .produto-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .produto-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .produto-content {
+            padding: 15px;
+        }
+        
+        .produto-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .produto-preco {
+            font-weight: 700;
+            color: var(--azul-oceano);
+            margin-bottom: 10px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(rgba(26, 107, 161, 0.9), rgba(26, 107, 161, 0.9)), url('https://source.unsplash.com/random/1920x1080/?travel,adventure') no-repeat center center/cover;
+            color: var(--branco);
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            color: var(--branco);
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            padding: 0 30px;
+            background-color: var(--dourado);
+            color: var(--preto);
+            border: none;
+            border-radius: 0 30px 30px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--areia);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--branco);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--dourado);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--branco);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--dourado);
+            color: var(--preto);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Páginas de Blog */
+        .blog-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+        
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1920x1080/?travel,blog') no-repeat center center/cover;
+            color: var(--branco);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .blog-header h1 {
+            color: var(--branco);
+            font-size: 3rem;
+        }
+        
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .category-btn {
+            padding: 8px 20px;
+            background-color: rgba(255,255,255,0.2);
+            color: var(--branco);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--dourado);
+            color: var(--preto);
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .single-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .post-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .post-content h2, .post-content h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .post-content p {
+            margin-bottom: 20px;
+        }
+        
+        .post-content blockquote {
+            border-left: 4px solid var(--dourado);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .tag {
+            background-color: var(--cinza-claro);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--cinza);
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+        
+        .admin-btn {
+            background-color: var(--dourado);
+            color: var(--preto);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .admin-modal-content {
+            background-color: var(--branco);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            padding: 30px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .admin-modal h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--cinza);
+            border-radius: 5px;
+            font-family: var(--fonte-texto);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .sobre-container {
+                flex-direction: column;
+            }
+            
+            .sobre-img, .sobre-content {
+                flex: none;
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--branco);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input, .newsletter-btn {
+                width: 100%;
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .post-navigation {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Do Zero ao <span>Mundo 360</span></a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="index.html#destinos">Destinos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#recomendacoes">Recomendações</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo da página será carregado dinamicamente -->
+    <div id="page-content"></div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel">
+        <div class="admin-btn" id="adminToggle">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+
+    <!-- Modal Admin -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-modal-content">
+            <h2>Adicionar Novo Post</h2>
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="postTitle">Título do Post</label>
+                    <input type="text" id="postTitle" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="postCategory">Categoria</label>
+                    <select id="postCategory" class="form-control" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="destinos">Destinos</option>
+                        <option value="dicas">Dicas</option>
+                        <option value="vida-nomade">Vida Nômade Digital</option>
+                        <option value="idiomas">Idiomas</option>
+                        <option value="planejamento">Planejamento</option>
+                        <option value="nossa-historia">Nossa História</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postImage">URL da Imagem</label>
+                    <input type="text" id="postImage" class="form-control" placeholder="https://..." required>
+                </div>
+                <div class="form-group">
+                    <label for="postExcerpt">Resumo</label>
+                    <textarea id="postExcerpt" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="postContent">Conteúdo</label>
+                    <textarea id="postContent" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="postTags">Tags (separadas por vírgula)</label>
+                    <input type="text" id="postTags" class="form-control" placeholder="viagem, portugal, dicas">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancelPost">Cancelar</button>
+                    <button type="submit" class="btn btn-dourado">Publicar Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sistema de Roteamento SPA (Single Page Application)
+        const routes = {
+            '/': 'index.html',
+            '/blog': 'blog.html',
+            '/post': 'post.html'
+        };
+
+        // Sistema de Blog - Dados
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [
+            {
+                id: 1,
+                title: "Como nos tornamos nômades digitais em 6 meses",
+                category: "vida-nomade",
+                excerpt: "O passo a passo completo de como deixamos nossos empregos tradicionais e começamos a viver viajando pelo mundo enquanto trabalhamos remotamente.",
+                content: "<p>Há pouco mais de um ano, éramos como a maioria das pessoas: presos à rotina de acordar cedo, enfrentar o trânsito, trabalhar das 9 às 18h (ou mais) e repetir esse ciclo dia após dia. Maynara trabalhava como Analista de Departamento Pessoal e eu como Supervisor de Vendas. Tínhamos uma vida confortável, mas sentíamos que algo estava faltando.</p><p>Foi então que decidimos que era hora de uma mudança radical. Em seis meses, transformamos completamente nossas vidas e nos tornamos nômades digitais. Neste post, vou compartilhar o passo a passo de como fizemos isso.</p><h3>Passo 1: Definir o objetivo claro</h3><p>O primeiro passo foi estabelecer exatamente o que queríamos. Não era apenas 'viajar', mas criar um estilo de vida que nos permitisse trabalhar de qualquer lugar do mundo, conhecer novas culturas e ter liberdade geográfica.</p><h3>Passo 2: Desenvolver habilidades digitais</h3><p>Identificamos habilidades que poderiam ser monetizadas online. No meu caso, foquei em marketing digital e gestão de tráfego. Maynara se especializou em gestão de projetos remotos e consultoria de RH para empresas digitais.</p><blockquote>O maior obstáculo não é o dinheiro, mas a mentalidade. Precisamos nos libertar da ideia de que segurança significa estabilidade em um emprego tradicional.</blockquote><h3>Passo 3: Criar múltiplas fontes de renda</h3><p>Desenvolvemos várias fontes de renda: freelas, consultorias, afiliados e nosso blog. Isso nos deu a segurança financeira necessária para dar o primeiro passo.</p><p>O processo não foi fácil, mas cada desafio valeu a pena. Hoje, temos a liberdade de trabalhar de qualquer lugar e estamos vivendo nosso sonho de viajar pelo mundo.</p>",
+                image: "https://source.unsplash.com/random/800x600/?digital,nomad",
+                date: "2023-10-15",
+                tags: ["nômade digital", "trabalho remoto", "liberdade", "transformação"],
+                author: "Maynara e [Seu Nome]"
+            },
+            {
+                id: 2,
+                title: "Guia completo para morar em Portugal",
+                category: "destinos",
+                excerpt: "Tudo o que você precisa saber sobre vistos, custo de vida, trabalho e qualidade de vida no país que escolhemos para nosso próximo destino.",
+                content: "<p>Portugal foi o primeiro país que visitamos quando decidimos embarcar nessa jornada, e desde então criamos uma conexão especial com essa nação acolhedora. Agora, estamos planejando nosso retorno para morar e estudar no país, e queremos compartilhar tudo o que aprendemos sobre como se estabelecer em Portugal.</p><h3>Vistos e Documentação</h3><p>Para brasileiros, Portugal oferece várias opções de vistos. Os mais comuns são:</p><ul><li><strong>Visto D7 (aposentados e rendimentos próprios):</strong> Para quem tem rendimentos passivos ou é aposentado.</li><li><strong>Visto D2 (empreendedores):</strong> Para quem quer abrir um negócio em Portugal.</li><li><strong>Visto de Estudo:</strong> Para matrícula em instituição de ensino portuguesa.</li><li><strong>Visto de Trabalho:</strong> Com contrato de trabalho de empresa portuguesa.</li></ul><h3>Custo de Vida</h3><p>Comparado a outros países europeus, Portugal tem um custo de vida acessível, especialmente fora de Lisboa e Porto. Um casal pode viver confortavelmente com €1.500-€2.000 por mês, dependendo do estilo de vida e localização.</p><h3>Melhores Cidades para Morar</h3><p>Além de Lisboa e Porto, consideramos outras cidades excelentes para morar:</p><ul><li><strong>Braga:</strong> Cidade histórica com universidade renomada e custo mais baixo.</li><li><strong>Coimbra:</strong> Cidade universitária com atmosfera jovem e vibrante.</li><li><strong>Aveiro:</strong> Conhecida como a 'Veneza portuguesa', com canais e praias próximas.</li><li><strong>Faro:</strong> No Algarve, ideal para quem busca sol e praia durante todo o ano.</li></ul><p>Portugal nos conquistou pela qualidade de vida, segurança, gastronomia incrível e pela facilidade com que os brasileiros são recebidos. Estamos ansiosos para nosso retorno!</p>",
+                image: "https://source.unsplash.com/random/800x600/?portugal,lisbon",
+                date: "2023-10-10",
+                tags: ["portugal", "vistos", "morar no exterior", "europa"],
+                author: "Maynara e [Seu Nome]"
+            },
+            {
+                id: 3,
+                title: "Como aprender um novo idioma em 3 meses",
+                category: "idiomas",
+                excerpt: "Nossas técnicas e métodos comprovados para aprender rapidamente um novo idioma enquanto viajamos pelo mundo.",
+                content: "<p>Uma das maiores barreiras quando decidimos viajar pelo mundo era o idioma. Sabíamos que para realmente nos integrarmos nas culturas locais, precisaríamos falar pelo menos o básico de cada língua. Desenvolvemos um método intensivo que nos permitiu alcançar fluência conversacional em espanhol em apenas 3 meses, e queremos compartilhar essa abordagem com vocês.</p><h3>Imersão Total desde o Primeiro Dia</h3><p>A chave para aprender rapidamente é criar um ambiente de imersão, mesmo antes de chegar ao país. Começamos mudando todas as configurações dos nossos dispositivos para o idioma-alvo, ouvindo música, podcasts e assistindo a filmes e séries sem legenda.</p><h3>Foco em Vocabulário Essencial</h3><p>Em vez de tentar aprender todas as palavras, focamos no vocabulário mais útil para situações do dia a dia. Usamos o princípio de Pareto: 20% do vocabulário cobre 80% das situações de comunicação.</p><h3>Prática Diária com Falantes Nativos</h3><p>Utilizamos aplicativos de intercâmbio linguístico como Tandem e HelloTalk para conversar com nativos todos os dias. Mesmo 15-30 minutos de conversação por dia fazem uma diferença enorme.</p><blockquote>O erro é parte do processo. Quanto mais você se permitir errar, mais rápido aprenderá.</blockquote><h3>Nossa Rotina de Estudos de 3 Meses</h3><p>Dividimos nosso dia em blocos de estudo:</p><ul><li><strong>Manhã (30 min):</strong> Revisão de vocabulário com aplicativos (Anki, Memrise)</li><li><strong>Almoço (30 min):</strong> Áudio em espanhol (podcasts, músicas)</li><li><strong>Tarde (45 min):</strong> Estudo de gramática e estruturas</li><li><strong>Noite (30 min):</strong> Prática de conversação com nativos</li></ul><p>Com essa abordagem consistente, em 3 meses já conseguíamos nos comunicar confortavelmente em espanhol em situações do dia a dia, fazer pedidos em restaurantes, negociar preços e até ter conversas mais profundas sobre nossos projetos e sonhos.</p>",
+                image: "https://source.unsplash.com/random/800x600/?language,learning",
+                date: "2023-10-05",
+                tags: ["idiomas", "aprendizado", "espanhol", "técnicas"],
+                author: "Maynara e [Seu Nome]"
+            }
+        ];
+
+        // Salvar posts no localStorage
+        function savePosts() {
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+        }
+
+        // Inicializar a aplicação
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar a página inicial por padrão
+            loadPage('index.html');
+            
+            // Configurar navegação
+            setupNavigation();
+            
+            // Configurar funcionalidades do admin
+            setupAdminPanel();
+        });
+
+        // Configurar sistema de navegação
+        function setupNavigation() {
+            // Interceptar cliques em links
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('a') || e.target.closest('a')) {
+                    const link = e.target.matches('a') ? e.target : e.target.closest('a');
+                    const href = link.getAttribute('href');
+                    
+                    // Verificar se é um link interno
+                    if (href && href.startsWith('/') || href.includes('.html')) {
+                        e.preventDefault();
+                        loadPage(href);
+                        
+                        // Fechar menu mobile se estiver aberto
+                        const nav = document.querySelector('nav ul');
+                        if (nav.classList.contains('show')) {
+                            nav.classList.remove('show');
+                        }
+                    }
+                }
+            });
+            
+            // Configurar menu mobile
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    const nav = document.querySelector('nav ul');
+                    nav.classList.toggle('show');
+                });
+            }
+            
+            // Configurar scroll do header
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Carregar páginas dinamicamente
+        function loadPage(page) {
+            // Atualizar URL no navegador
+            if (page === 'index.html') {
+                history.pushState({}, '', '/');
+            } else {
+                history.pushState({}, '', page);
+            }
+            
+            // Determinar qual página carregar
+            let pageToLoad = page;
+            if (page === '/') pageToLoad = 'index.html';
+            
+            // Carregar conteúdo da página
+            if (pageToLoad === 'index.html') {
+                loadHomePage();
+            } else if (pageToLoad === 'blog.html') {
+                loadBlogPage();
+            } else if (pageToLoad.startsWith('post.html')) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const postId = urlParams.get('id');
+                loadPostPage(postId);
+            }
+        }
+
+        // Carregar página inicial
+        function loadHomePage() {
+            document.getElementById('page-content').innerHTML = `
+                <!-- Hero Section -->
+                <section class="hero" id="home">
+                    <div class="hero-content">
+                        <h1>Do Zero ao Mundo 360</h1>
+                        <p>Largamos tudo para viajar o mundo e inspirar você a fazer o mesmo</p>
+                        <a href="#sobre" class="btn">Conheça Nossa História</a>
+                        <a href="blog.html" class="btn btn-dourado">Viaje com a Gente</a>
+                    </div>
+                </section>
+
+                <!-- Sobre Nós -->
+                <section class="sobre" id="sobre">
+                    <div class="container">
+                        <h2 class="section-title">Nossa História</h2>
+                        <div class="sobre-container">
+                            <div class="sobre-img">
+                                <img src="https://source.unsplash.com/random/600x400/?couple,travel" alt="Maynara e [Seu Nome]">
+                            </div>
+                            <div class="sobre-content">
+                                <h2>Deixamos tudo para trás em busca de um sonho</h2>
+                                <p>Somos Maynara (ex-Analista de Departamento Pessoal) e [Seu Nome] (ex-Supervisor de Vendas). Em 2022, decidimos que era hora de transformar nossa vida completamente.</p>
+                                <p>Largamos nossos empregos tradicionais, nossa zona de conforto e partimos em uma jornada pelo mundo com uma missão: encontrar o país ideal para viver, aprender novos idiomas e inspirar outras pessoas a seguir seus sonhos.</p>
+                                <p>Já visitamos Portugal, Espanha, França, Bélgica, Luxemburgo e Brasil. Atualmente estamos na Bélgica, mas em breve retornaremos a Portugal para estudar, aprender idiomas e evoluir profissionalmente.</p>
+                                <p>Nossa missão é crescer nossas redes, inspirar pessoas, viver de renda, trabalhar como nômades digitais e alcançar nosso primeiro milhão até 2030.</p>
+                                <a href="blog.html?category=nossa-historia" class="btn">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Destinos -->
+                <section class="destinos" id="destinos">
+                    <div class="container">
+                        <h2 class="section-title">Destinos que Visitamos</h2>
+                        <div class="destinos-grid">
+                            <!-- Portugal -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?portugal" alt="Portugal">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>Portugal</h3>
+                                    <p>O país que nos acolheu primeiro e para onde retornaremos em breve para estudar e trabalhar.</p>
+                                    <a href="blog.html?category=destinos&tag=portugal">Explorar Portugal</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Espanha -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?spain" alt="Espanha">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>Espanha</h3>
+                                    <p>País vibrante com cultura rica, gastronomia incrível e paisagens deslumbrantes.</p>
+                                    <a href="blog.html?category=destinos&tag=espanha">Explorar Espanha</a>
+                                </div>
+                            </div>
+                            
+                            <!-- França -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?france" alt="França">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>França</h3>
+                                    <p>Da romântica Paris aos campos de lavanda da Provença, um país de sonhos.</p>
+                                    <a href="blog.html?category=destinos&tag=franca">Explorar França</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Bélgica -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?belgium" alt="Bélgica">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>Bélgica</h3>
+                                    <p>Onde estamos atualmente, conhecendo suas cidades medievais e deliciosos chocolates.</p>
+                                    <a href="blog.html?category=destinos&tag=belgica">Explorar Bélgica</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Luxemburgo -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?luxembourg" alt="Luxemburgo">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>Luxemburgo</h3>
+                                    <p>Um pequeno país com grande charme, castelos impressionantes e natureza exuberante.</p>
+                                    <a href="blog.html?category=destinos&tag=luxemburgo">Explorar Luxemburgo</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Brasil -->
+                            <div class="destino-card">
+                                <div class="destino-img">
+                                    <img src="https://source.unsplash.com/random/600x400/?brazil" alt="Brasil">
+                                </div>
+                                <div class="destino-content">
+                                    <h3>Brasil</h3>
+                                    <p>Nossa terra natal, com uma diversidade cultural e natural que encanta o mundo.</p>
+                                    <a href="blog.html?category=destinos&tag=brasil">Explorar Brasil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blog Preview -->
+                <section class="blog" id="blog">
+                    <div class="container">
+                        <h2 class="section-title">Últimas do Blog</h2>
+                        <div class="blog-grid" id="home-blog-posts">
+                            <!-- Posts serão carregados dinamicamente -->
+                        </div>
+                        <div style="text-align: center; margin-top: 40px;">
+                            <a href="blog.html" class="btn">Ver Todos os Posts</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recomendações -->
+                <section class="recomendacoes" id="recomendacoes">
+                    <div class="container">
+                        <h2 class="section-title">Nossas Recomendações</h2>
+                        
+                        <div class="recomendacoes-tabs">
+                            <button class="tab-btn active" data-tab="cursos">Cursos de Idiomas</button>
+                            <button class="tab-btn" data-tab="produtos">Produtos de Viagem</button>
+                            <button class="tab-btn" data-tab="ferramentas">Ferramentas Nômade</button>
+                            <button class="tab-btn" data-tab="seguros">Seguros Viagem</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="cursos">
+                            <div class="produtos-grid">
+                                <!-- Curso 1 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?english,learning" alt="Curso de Inglês">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Curso Completo de Inglês</h3>
+                                        <p>Aprenda inglês do zero ao avançado com método comprovado.</p>
+                                        <div class="produto-preco">R$ 297,00</div>
+                                        <a href="#" class="btn">Ver Curso</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Curso 2 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?french,learning" alt="Curso de Francês">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Curso Intensivo de Francês</h3>
+                                        <p>Domine o francês em 90 dias com aulas práticas e imersivas.</p>
+                                        <div class="produto-preco">R$ 347,00</div>
+                                        <a href="#" class="btn">Ver Curso</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Curso 3 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?spanish,learning" alt="Curso de Espanhol">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Espanhol para Viajantes</h3>
+                                        <p>Curso focado em situações reais de viagem e comunicação.</p>
+                                        <div class="produto-preco">R$ 197,00</div>
+                                        <a href="#" class="btn">Ver Curso</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="produtos">
+                            <div class="produtos-grid">
+                                <!-- Produto 1 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?backpack" alt="Mochila de Viagem">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Mochila de Viagem 65L</h3>
+                                        <p>Mochila resistente e prática para nômades digitais.</p>
+                                        <div class="produto-preco">R$ 299,00</div>
+                                        <a href="#" class="btn">Ver na Amazon</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Produto 2 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?adapter,travel" alt="Adaptador Universal">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Adaptador Universal de Viagem</h3>
+                                        <p>Funciona em mais de 150 países com proteção contra surtos.</p>
+                                        <div class="produto-preco">R$ 89,90</div>
+                                        <a href="#" class="btn">Ver na Amazon</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Produto 3 -->
+                                <div class="produto-card">
+                                    <div class="produto-img">
+                                        <img src="https://source.unsplash.com/random/600x400/?power,bank" alt="Power Bank">
+                                    </div>
+                                    <div class="produto-content">
+                                        <h3>Power Bank 26800mAh</h3>
+                                        <p>Carregue todos seus dispositivos múltiplas vezes durante viagens.</p>
+                                        <div class="produto-preco">R$ 199,00</div>
+                                        <a href="#" class="btn">Ver na Amazon</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter -->
+                <section class="newsletter" id="contato">
+                    <div class="container">
+                        <h2 class="section-title">Viaje com a Gente!</h2>
+                        <p>Inscreva-se em nossa newsletter e receba dicas exclusivas, roteiros de viagem e inspiração para transformar sua vida.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+                            <button type="submit" class="newsletter-btn">Inscrever-se</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="container">
+                        <div class="footer-container">
+                            <div class="footer-col">
+                                <h3>Do Zero ao Mundo 360</h3>
+                                <p>Inspirando pessoas a largar tudo e viajar o mundo. Junte-se a nós nessa jornada de transformação!</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h3>Links Rápidos</h3>
+                                <ul>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#sobre">Sobre Nós</a></li>
+                                    <li><a href="#destinos">Destinos</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="#recomendacoes">Recomendações</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h3>Categorias do Blog</h3>
+                                <ul>
+                                    <li><a href="blog.html?category=destinos">Destinos</a></li>
+                                    <li><a href="blog.html?category=dicas">Dicas de Viagem</a></li>
+                                    <li><a href="blog.html?category=vida-nomade">Vida Nômade Digital</a></li>
+                                    <li><a href="blog.html?category=idiomas">Idiomas</a></li>
+                                    <li><a href="blog.html?category=planejamento">Planejamento</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h3>Contato</h3>
+                                <ul>
+                                    <li><i class="fas fa-envelope"></i> contato@dozeroaomundo360.com</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Atualmente na Bélgica</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-bottom">
+                            <p>&copy; 2023 Do Zero ao Mundo 360. Todos os direitos reservados.</p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+            
+            // Carregar posts recentes na home
+            loadRecentPosts();
+            
+            // Configurar funcionalidades específicas da home
+            setupHomeFeatures();
+        }
+
+        // Carregar página do blog
+        function loadBlogPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            const tag = urlParams.get('tag');
+            
+            document.getElementById('page-content').innerHTML = `
+                <div class="blog-page">
+                    <div class="blog-header">
+                        <div class="container">
+                            <h1>Blog Do Zero ao Mundo 360</h1>
+                            <p>Dicas, histórias e inspirações da nossa jornada pelo mundo</p>
+                            <div class="blog-categories" id="blog-categories">
+                                <a href="blog.html" class="category-btn ${!category ? 'active' : ''}">Todos</a>
+                                <a href="blog.html?category=destinos" class="category-btn ${category === 'destinos' ? 'active' : ''}">Destinos</a>
+                                <a href="blog.html?category=dicas" class="category-btn ${category === 'dicas' ? 'active' : ''}">Dicas</a>
+                                <a href="blog.html?category=vida-nomade" class="category-btn ${category === 'vida-nomade' ? 'active' : ''}">Vida Nômade</a>
+                                <a href="blog.html?category=idiomas" class="category-btn ${category === 'idiomas' ? 'active' : ''}">Idiomas</a>
+                                <a href="blog.html?category=planejamento" class="category-btn ${category === 'planejamento' ? 'active' : ''}">Planejamento</a>
+                                <a href="blog.html?category=nossa-historia" class="category-btn ${category === 'nossa-historia' ? 'active' : ''}">Nossa História</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="blog-posts" id="blog-posts">
+                            <!-- Posts serão carregados dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Carregar posts do blog
+            loadBlogPosts(category, tag);
+        }
+
+        // Carregar página de post individual
+        function loadPostPage(postId) {
+            const post = blogPosts.find(p => p.id == postId);
+            
+            if (!post) {
+                document.getElementById('page-content').innerHTML = `
+                    <div class="blog-page">
+                        <div class="container">
+                            <div style="text-align: center; padding: 100px 0;">
+                                <h2>Post não encontrado</h2>
+                                <p>O post que você está procurando não existe ou foi removido.</p>
+                                <a href="blog.html" class="btn">Voltar ao Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Encontrar posts relacionados (mesma categoria)
+            const relatedPosts = blogPosts
+                .filter(p => p.id != postId && p.category === post.category)
+                .slice(0, 3);
+            
+            document.getElementById('page-content').innerHTML = `
+                <div class="blog-page">
+                    <article class="single-post">
+                        <div class="container">
+                            <div class="post-header">
+                                <h1>${post.title}</h1>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> ${formatDate(post.date)}</span>
+                                    <span><i class="far fa-folder"></i> ${getCategoryName(post.category)}</span>
+                                    <span><i class="far fa-user"></i> ${post.author}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="post-image">
+                                <img src="${post.image}" alt="${post.title}">
+                            </div>
+                            
+                            <div class="post-content">
+                                ${post.content}
+                            </div>
+                            
+                            <div class="post-tags">
+                                ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                            
+                            ${relatedPosts.length > 0 ? `
+                            <div class="related-posts">
+                                <h3>Posts Relacionados</h3>
+                                <div class="blog-grid">
+                                    ${relatedPosts.map(relatedPost => `
+                                    <div class="blog-card">
+                                        <div class="blog-img">
+                                            <img src="${relatedPost.image}" alt="${relatedPost.title}">
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
+                                                <span><i class="far fa-calendar"></i> ${formatDate(relatedPost.date)}</span>
+                                                <span><i class="far fa-folder"></i> ${getCategoryName(relatedPost.category)}</span>
+                                            </div>
+                                            <h3>${relatedPost.title}</h3>
+                                            <p>${relatedPost.excerpt}</p>
+                                            <a href="post.html?id=${relatedPost.id}">Ler Mais</a>
+                                        </div>
+                                    </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            ` : ''}
+                            
+                            <div class="post-navigation">
+                                <a href="blog.html" class="btn"><i class="fas fa-arrow-left"></i> Voltar ao Blog</a>
+                                <div class="social-share">
+                                    <span>Compartilhe:</span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            `;
+        }
+
+        // Carregar posts recentes na home
+        function loadRecentPosts() {
+            const recentPosts = blogPosts.slice(0, 3);
+            const postsContainer = document.getElementById('home-blog-posts');
+            
+            if (postsContainer) {
+                postsContainer.innerHTML = recentPosts.map(post => `
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> ${formatDate(post.date)}</span>
+                                <span><i class="far fa-folder"></i> ${getCategoryName(post.category)}</span>
+                            </div>
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt}</p>
+                            <a href="post.html?id=${post.id}">Ler Mais</a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Carregar posts do blog com filtros
+        function loadBlogPosts(category = null, tag = null) {
+            let filteredPosts = blogPosts;
+            
+            // Aplicar filtros
+            if (category) {
+                filteredPosts = filteredPosts.filter(post => post.category === category);
+            }
+            
+            if (tag) {
+                filteredPosts = filteredPosts.filter(post => post.tags.includes(tag));
+            }
+            
+            // Ordenar por data (mais recente primeiro)
+            filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            const postsContainer = document.getElementById('blog-posts');
+            
+            if (filteredPosts.length === 0) {
+                postsContainer.innerHTML = `
+                    <div style="text-align: center; padding: 50px 0; grid-column: 1 / -1;">
+                        <h3>Nenhum post encontrado</h3>
+                        <p>Não encontramos posts com os filtros selecionados.</p>
+                        <a href="blog.html" class="btn">Ver Todos os Posts</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            postsContainer.innerHTML = filteredPosts.map(post => `
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> ${formatDate(post.date)}</span>
+                            <span><i class="far fa-folder"></i> ${getCategoryName(post.category)}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.excerpt}</p>
+                        <a href="post.html?id=${post.id}">Ler Mais</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Configurar funcionalidades da home
+        function setupHomeFeatures() {
+            // Configurar abas de recomendações
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover active class de todos os botões e conteúdos
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar active class ao botão clicado
+                    btn.classList.add('active');
+                    
+                    // Mostrar conteúdo correspondente
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Configurar formulário de newsletter
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('.newsletter-input').value;
+                    alert(`Obrigado por se inscrever com o email: ${email}! Em breve você receberá nossas novidades.`);
+                    this.reset();
+                });
+            }
+        }
+
+        // Configurar painel administrativo
+        function setupAdminPanel() {
+            const adminToggle = document.getElementById('adminToggle');
+            const adminModal = document.getElementById('adminModal');
+            const cancelPost = document.getElementById('cancelPost');
+            const postForm = document.getElementById('postForm');
+            
+            // Alternar visibilidade do modal
+            adminToggle.addEventListener('click', () => {
+                adminModal.style.display = 'flex';
+            });
+            
+            // Fechar modal
+            cancelPost.addEventListener('click', () => {
+                adminModal.style.display = 'none';
+                postForm.reset();
+            });
+            
+            // Fechar modal ao clicar fora
+            adminModal.addEventListener('click', (e) => {
+                if (e.target === adminModal) {
+                    adminModal.style.display = 'none';
+                    postForm.reset();
+                }
+            });
+            
+            // Adicionar novo post
+            postForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const newPost = {
+                    id: blogPosts.length > 0 ? Math.max(...blogPosts.map(p => p.id)) + 1 : 1,
+                    title: document.getElementById('postTitle').value,
+                    category: document.getElementById('postCategory').value,
+                    image: document.getElementById('postImage').value,
+                    excerpt: document.getElementById('postExcerpt').value,
+                    content: document.getElementById('postContent').value,
+                    date: new Date().toISOString().split('T')[0],
+                    tags: document.getElementById('postTags').value.split(',').map(tag => tag.trim()),
+                    author: "Maynara e [Seu Nome]"
+                };
+                
+                blogPosts.unshift(newPost);
+                savePosts();
+                
+                alert('Post adicionado com sucesso!');
+                adminModal.style.display = 'none';
+                postForm.reset();
+                
+                // Recarregar a página atual se for o blog
+                if (window.location.pathname === '/blog.html' || window.location.search.includes('blog')) {
+                    loadBlogPage();
+                } else if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    loadRecentPosts();
+                }
+            });
+        }
+
+        // Funções auxiliares
+        function formatDate(dateString) {
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return new Date(dateString).toLocaleDateString('pt-BR', options);
+        }
+
+        function getCategoryName(category) {
+            const categories = {
+                'destinos': 'Destinos',
+                'dicas': 'Dicas',
+                'vida-nomade': 'Vida Nômade Digital',
+                'idiomas': 'Idiomas',
+                'planejamento': 'Planejamento',
+                'nossa-historia': 'Nossa História'
+            };
+            return categories[category] || category;
+        }
+
+        // Configurar navegação do histórico do navegador
+        window.addEventListener('popstate', function() {
+            const path = window.location.pathname;
+            if (path === '/') {
+                loadHomePage();
+            } else if (path === '/blog.html') {
+                loadBlogPage();
+            } else if (path === '/post.html') {
+                const urlParams = new URLSearchParams(window.location.search);
+                const postId = urlParams.get('id');
+                loadPostPage(postId);
+            }
+        });
+    </script>
+</body>
+</html>
